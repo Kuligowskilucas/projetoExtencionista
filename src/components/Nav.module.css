@@ -1,0 +1,54 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-light);
+  padding: 0 1.5rem;
+  backdrop-filter: blur(12px);
+}
+
+.inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+}
+
+.inner::-webkit-scrollbar {
+  display: none;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--green-900);
+  margin-right: 16px;
+  white-space: nowrap;
+  padding: 14px 0;
+  letter-spacing: -0.02em;
+}
+
+.tab {
+  background: none;
+  border: none;
+  padding: 14px 12px;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.tab:hover {
+  color: var(--text-primary);
+}
+
+.active {
+  font-weight: 500;
+  color: var(--green-900);
+  border-bottom-color: var(--green-900);
+}
