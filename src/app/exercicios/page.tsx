@@ -22,7 +22,7 @@ export default function ExerciciosPage() {
       (aula === 0 || e.aula === aula)
   );
 
-  const uniqueAulas = [...new Set(EXERCISES.map((e) => e.aula))].sort(
+  const uniqueAulas = Array.from(new Set(EXERCISES.map((e) => e.aula))).sort(
     (a, b) => a - b
   );
 
