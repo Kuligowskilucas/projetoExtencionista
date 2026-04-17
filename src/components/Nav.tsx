@@ -6,6 +6,7 @@ import styles from "./Nav.module.css";
 
 const tabs = [
   { href: "/", label: "Início" },
+  { href: "/modulo/1", label: "Estudar" },
   { href: "/aulas", label: "Aulas" },
   { href: "/cronograma", label: "Cronograma" },
   { href: "/exercicios", label: "Exercícios" },
@@ -23,7 +24,7 @@ export default function Nav() {
             key={t.href}
             href={t.href}
             className={`${styles.tab} ${
-              pathname === t.href ? styles.active : ""
+              pathname === t.href || (t.href !== "/" && pathname?.startsWith(t.href)) ? styles.active : ""
             }`}
           >
             {t.label}
