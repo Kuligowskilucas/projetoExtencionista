@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cronograma do Curso - IFPR Pinhais</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&amp;family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#1a1c1c",
+                    "surface-container-high": "#e8e8e8",
+                    "surface-tint": "#2a6b2c",
+                    "surface-variant": "#e2e2e2",
+                    "on-error": "#ffffff",
+                    "on-primary-container": "#90d689",
+                    "tertiary": "#533400",
+                    "primary-container": "#1b5e20",
+                    "error": "#ba1a1a",
+                    "tertiary-container": "#724900",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed": "#002203",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed": "#2a1800",
+                    "surface-bright": "#f9f9f9",
+                    "outline-variant": "#c0c9bb",
+                    "on-surface": "#1a1c1c",
+                    "on-tertiary": "#ffffff",
+                    "primary": "#00450d",
+                    "secondary-fixed-dim": "#a9c7ff",
+                    "on-secondary-container": "#003670",
+                    "secondary-fixed": "#d6e3ff",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#643f00",
+                    "primary-fixed-dim": "#91d78a",
+                    "on-surface-variant": "#41493e",
+                    "inverse-on-surface": "#f1f1f1",
+                    "secondary-container": "#64a1ff",
+                    "secondary": "#005db7",
+                    "on-secondary-fixed-variant": "#00468c",
+                    "surface-container-low": "#f3f3f3",
+                    "surface-dim": "#dadada",
+                    "on-tertiary-container": "#ffb751",
+                    "tertiary-fixed-dim": "#ffb957",
+                    "on-primary": "#ffffff",
+                    "outline": "#717a6d",
+                    "inverse-surface": "#2f3131",
+                    "on-secondary": "#ffffff",
+                    "surface": "#f9f9f9",
+                    "background": "#f9f9f9",
+                    "surface-container": "#eeeeee",
+                    "primary-fixed": "#acf4a4",
+                    "on-primary-fixed-variant": "#0c5216",
+                    "on-secondary-fixed": "#001b3d",
+                    "surface-container-highest": "#e2e2e2",
+                    "tertiary-fixed": "#ffddb5",
+                    "inverse-primary": "#91d78a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "touch-target-min": "48px",
+                    "margin": "32px",
+                    "gutter": "24px",
+                    "unit": "8px",
+                    "container-max-width": "1280px"
+            },
+            "fontFamily": {
+                    "headline-md": [
+                            "Space Grotesk"
+                    ],
+                    "body-md": [
+                            "Public Sans"
+                    ],
+                    "label-lg": [
+                            "Public Sans"
+                    ],
+                    "headline-lg": [
+                            "Space Grotesk"
+                    ],
+                    "label-sm": [
+                            "Public Sans"
+                    ],
+                    "headline-xl": [
+                            "Space Grotesk"
+                    ],
+                    "body-lg": [
+                            "Public Sans"
+                    ]
+            },
+            "fontSize": {
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-lg": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "letterSpacing": "0.02em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-xl": [
+                            "40px",
+                            {
+                                    "lineHeight": "48px",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<nav class="bg-white dark:bg-slate-900 font-['Space_Grotesk'] text-sm font-medium tracking-tight docked full-width top-0 border-b border-slate-200 dark:border-slate-800 shadow-[0_4px_20px_-4px_rgba(27,94,32,0.08)] z-50 sticky">
+<div class="flex justify-between items-center w-full px-6 py-3 max-w-[1280px] mx-auto">
+<div class="text-xl font-bold text-green-900 dark:text-green-50">
+                IFPR Pinhais
+            </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-slate-600 dark:text-slate-400 hover:text-green-700 dark:hover:text-green-300 transition-colors active:opacity-80 transition-all duration-200" href="#">Início</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-green-700 dark:hover:text-green-300 transition-colors active:opacity-80 transition-all duration-200" href="#">Módulos</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-green-700 dark:hover:text-green-300 transition-colors active:opacity-80 transition-all duration-200" href="#">Exercícios</a>
+<a class="text-green-700 dark:text-green-400 border-b-2 border-green-700 dark:border-green-400 pb-1 hover:text-green-700 dark:hover:text-green-300 transition-colors active:opacity-80 transition-all duration-200" href="#">Cronograma</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-green-900 dark:text-green-500 hover:bg-surface-container rounded-full p-2 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-green-900 dark:text-green-500 hover:bg-surface-container rounded-full p-2 transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<img alt="Foto de perfil do estudante" class="w-10 h-10 rounded-full object-cover border-2 border-surface-container-high ml-2 cursor-pointer" data-alt="A close up portrait of a young adult male student with a subtle smile, wearing casual clothing, photographed in natural, soft daytime lighting. The background is slightly blurred indicating a modern outdoor campus setting. The overall style is professional, warm, and highly realistic, fitting for an educational institution profile picture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYw28k7-krakFlxAwd0bvSIon3ZnqSRmeiK9dgU4WpKNGPqxKQ9KENaLBu9cDx4GEr3JTZNlGTjV8osOh_HGiZdxNn2VPeBdhY85Rxvca0tx3xyKWVTkNnygo6zRwZpwmpuikMCiJruX2R-xOr15UooQLXlvK-1cotOxXTrOFboqEInexovCFKhytkSUYBUi5BepgbKylhKSXZ9iQwwr_TzJMtyl0faJ4yI4kaZMSQETW6wUimqpLS3bIKFKTBNyChNWpos7VfObY"/>
+</div>
+</div>
+</nav>
+<div class="flex flex-1 max-w-[1280px] w-full mx-auto">
+<!-- SideNavBar -->
+<aside class="hidden lg:flex bg-slate-50 dark:bg-slate-950 font-['Space_Grotesk'] font-medium h-full w-64 fixed left-0 border-r border-r border-slate-200 dark:border-slate-800 flat no shadows flex flex-col gap-2 p-4 h-screen z-40 top-[65px]">
+<div class="mb-8 mt-4 px-4">
+<h2 class="text-lg font-black text-green-900 dark:text-white">Portal do Aluno</h2>
+<p class="text-sm text-slate-500">IFPR Campus Pinhais</p>
+</div>
+<nav class="flex-1 flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:translate-x-1 transition-transform duration-200 cursor-pointer select-none" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:translate-x-1 transition-transform duration-200 cursor-pointer select-none" href="#">
+<span class="material-symbols-outlined">school</span>
+<span>Meus Cursos</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:translate-x-1 transition-transform duration-200 cursor-pointer select-none" href="#">
+<span class="material-symbols-outlined">quiz</span>
+<span>Banco de Questões</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 border-r-4 border-green-700 hover:translate-x-1 transition-transform duration-200 cursor-pointer select-none" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span>Calendário</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:translate-x-1 transition-transform duration-200 cursor-pointer select-none mt-auto" href="#">
+<span class="material-symbols-outlined">help_center</span>
+<span>Suporte</span>
+</a>
+</nav>
+<div class="mt-4">
+<button class="w-full bg-primary text-on-primary py-3 rounded-lg font-label-lg hover:bg-primary-container transition-colors min-h-[48px] shadow-sm">
+                    Novo Chamado
+                </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full lg:ml-64 px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-10 gap-4">
+<div>
+<h1 class="font-headline-xl text-headline-xl text-on-background mb-2">Cronograma do Curso</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Visão geral de todas as aulas e módulos do semestre.</p>
+</div>
+<button class="flex items-center gap-2 bg-surface text-secondary border border-outline-variant px-6 py-3 rounded-lg font-label-lg hover:bg-surface-container transition-colors shadow-sm min-h-[48px]">
+<span class="material-symbols-outlined">calendar_month</span>
+                    Adicionar ao Google Agenda
+                </button>
+</div>
+<!-- Timeline Container -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_24px_rgba(27,94,32,0.04)] border border-surface-variant overflow-hidden">
+<!-- Table Header (Desktop) -->
+<div class="hidden md:grid grid-cols-12 gap-4 px-6 py-4 bg-surface-container-low border-b border-surface-variant font-label-lg text-label-lg text-on-surface-variant uppercase tracking-wider">
+<div class="col-span-2">Data / Dia</div>
+<div class="col-span-3">Módulo</div>
+<div class="col-span-1">Aula</div>
+<div class="col-span-5">Título</div>
+<div class="col-span-1 text-right">Horas</div>
+</div>
+<div class="divide-y divide-surface-variant">
+<!-- Past Class (Reduced Opacity) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4 px-6 py-5 opacity-60 hover:bg-surface-bright transition-colors items-center">
+<div class="col-span-1 md:col-span-2 flex flex-row md:flex-col gap-2 md:gap-0">
+<span class="font-label-lg text-label-lg text-on-surface">04/04</span>
+<span class="font-body-md text-sm text-on-surface-variant">Quinta-feira</span>
+</div>
+<div class="col-span-1 md:col-span-3">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed text-xs font-semibold">
+                                M1: Fundamentos
+                            </span>
+</div>
+<div class="col-span-1 md:col-span-1 font-body-md text-body-md text-on-surface-variant hidden md:block">
+                            01
+                        </div>
+<div class="col-span-1 md:col-span-5">
+<h3 class="font-headline-md text-[16px] leading-[24px] text-on-background">Introdução ao Ambiente Virtual</h3>
+<p class="font-body-md text-sm text-on-surface-variant md:hidden">Aula 01</p>
+</div>
+<div class="col-span-1 md:col-span-1 md:text-right font-body-md text-body-md text-on-surface-variant">
+                            4h
+                        </div>
+</div>
+<!-- Highlighted Next Class -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4 px-6 py-6 bg-primary-fixed-dim/10 border-l-4 border-primary items-center relative shadow-[0_2px_12px_rgba(27,94,32,0.06)] z-10">
+<div class="absolute -top-3 left-6 bg-primary text-on-primary px-3 py-1 rounded-full font-label-sm text-[10px] uppercase tracking-wider flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined" style="font-size: 14px;">notifications_active</span>
+                            Próxima Aula
+                        </div>
+<div class="col-span-1 md:col-span-2 flex flex-row md:flex-col gap-2 md:gap-0 mt-2 md:mt-0">
+<span class="font-label-lg text-label-lg text-primary">11/04</span>
+<span class="font-body-md text-sm text-on-surface-variant">Quinta-feira</span>
+</div>
+<div class="col-span-1 md:col-span-3">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed text-xs font-semibold border border-secondary-fixed-dim">
+                                M1: Fundamentos
+                            </span>
+</div>
+<div class="col-span-1 md:col-span-1 font-body-md text-body-md text-on-surface-variant hidden md:block">
+                            02
+                        </div>
+<div class="col-span-1 md:col-span-5">
+<h3 class="font-headline-md text-[18px] leading-[26px] text-on-background">Estruturas de Dados Básicas</h3>
+<p class="font-body-md text-sm text-on-surface-variant md:hidden">Aula 02</p>
+</div>
+<div class="col-span-1 md:col-span-1 md:text-right font-body-md text-body-md text-on-surface-variant">
+                            4h
+                        </div>
+</div>
+<!-- Future Class -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4 px-6 py-5 hover:bg-surface-bright transition-colors items-center">
+<div class="col-span-1 md:col-span-2 flex flex-row md:flex-col gap-2 md:gap-0">
+<span class="font-label-lg text-label-lg text-on-surface">18/04</span>
+<span class="font-body-md text-sm text-on-surface-variant">Quinta-feira</span>
+</div>
+<div class="col-span-1 md:col-span-3">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-xs font-semibold">
+                                M2: Lógica
+                            </span>
+</div>
+<div class="col-span-1 md:col-span-1 font-body-md text-body-md text-on-surface-variant hidden md:block">
+                            03
+                        </div>
+<div class="col-span-1 md:col-span-5">
+<h3 class="font-headline-md text-[16px] leading-[24px] text-on-background">Algoritmos de Ordenação</h3>
+<p class="font-body-md text-sm text-on-surface-variant md:hidden">Aula 03</p>
+</div>
+<div class="col-span-1 md:col-span-1 md:text-right font-body-md text-body-md text-on-surface-variant">
+                            4h
+                        </div>
+</div>
+<!-- Future Class -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4 px-6 py-5 hover:bg-surface-bright transition-colors items-center">
+<div class="col-span-1 md:col-span-2 flex flex-row md:flex-col gap-2 md:gap-0">
+<span class="font-label-lg text-label-lg text-on-surface">25/04</span>
+<span class="font-body-md text-sm text-on-surface-variant">Quinta-feira</span>
+</div>
+<div class="col-span-1 md:col-span-3">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-xs font-semibold">
+                                M2: Lógica
+                            </span>
+</div>
+<div class="col-span-1 md:col-span-1 font-body-md text-body-md text-on-surface-variant hidden md:block">
+                            04
+                        </div>
+<div class="col-span-1 md:col-span-5">
+<h3 class="font-headline-md text-[16px] leading-[24px] text-on-background">Avaliação Prática Módulo 1 e 2</h3>
+<p class="font-body-md text-sm text-on-surface-variant md:hidden">Aula 04</p>
+</div>
+<div class="col-span-1 md:col-span-1 md:text-right font-body-md text-body-md text-on-surface-variant">
+                            4h
+                        </div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="bg-white dark:bg-slate-900 font-['Space_Grotesk'] text-xs text-slate-500 w-full border-t border-t border-slate-200 dark:border-slate-800 flat z-10 mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center py-8 px-6 max-w-[1280px] mx-auto">
+<div class="mb-4 md:mb-0">
+                © 2024 IFPR Pinhais - Instituto Federal do Paraná. Todos os direitos reservados.
+            </div>
+<div class="flex gap-4">
+<a class="text-slate-500 hover:text-amber-600 transition-colors transition-opacity hover:opacity-100" href="#">Privacidade</a>
+<a class="text-slate-500 hover:text-amber-600 transition-colors transition-opacity hover:opacity-100" href="#">Termos de Uso</a>
+<a class="text-slate-500 hover:text-amber-600 transition-colors transition-opacity hover:opacity-100" href="#">Acessibilidade</a>
+<a class="text-slate-500 hover:text-amber-600 transition-colors transition-opacity hover:opacity-100" href="#">Contato</a>
+</div>
+</div>
+</footer>
+</body></html>

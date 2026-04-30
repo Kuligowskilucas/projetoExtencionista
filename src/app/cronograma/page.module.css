@@ -1,26 +1,32 @@
+/* ── Container ── */
 .main {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem;
+  max-width: var(--grid-max-width);
+  margin-inline: auto;
+  padding: var(--space-8) var(--grid-gutter);
 }
 
+/* ── Page Header ── */
 .pageTitle {
-  font-size: 22px;
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
   font-weight: 700;
-  color: var(--text-primary);
-  margin: 0 0 4px;
-  letter-spacing: -0.03em;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-1);
+  letter-spacing: var(--tracking-tight);
 }
 
 .pageSubtitle {
-  font-size: 13px;
-  color: var(--text-secondary);
-  margin: 0 0 24px;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-8);
+  line-height: var(--leading-normal);
 }
 
+/* ── Timeline ── */
 .timeline {
   position: relative;
-  padding-left: 24px;
+  padding-left: var(--space-8);
 }
 
 .line {
@@ -29,70 +35,130 @@
   top: 10px;
   bottom: 10px;
   width: 2px;
-  background: var(--border-light);
+  background: var(--color-border);
   border-radius: 1px;
 }
 
 .item {
   position: relative;
-  padding-bottom: 16px;
-  padding-left: 20px;
+  padding-bottom: var(--space-5);
+  padding-left: var(--space-6);
 }
 
 .dot {
   position: absolute;
   left: -20px;
   top: 6px;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: 2.5px solid var(--bg-primary);
-  box-shadow: 0 0 0 1px var(--border-light);
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-full);
+  border: 3px solid var(--color-surface-card);
+  box-shadow: 0 0 0 1px var(--color-border);
+  transition: transform var(--transition-fast);
+}
+
+.item:hover .dot {
+  transform: scale(1.25);
 }
 
 .itemContent {
   display: flex;
   flex-direction: column;
   gap: 2px;
+  background: var(--color-surface-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-normal), transform var(--transition-normal);
+}
+
+.item:hover .itemContent {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
 }
 
 .itemHeader {
   display: flex;
   align-items: baseline;
-  gap: 8px;
+  gap: var(--space-3);
   flex-wrap: wrap;
 }
 
 .date {
-  font-size: 14px;
+  font-family: var(--font-display);
+  font-size: var(--text-base);
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--color-text-primary);
   min-width: 100px;
 }
 
 .dayPill {
-  font-size: 11px;
-  color: var(--text-tertiary);
-  background: var(--bg-secondary);
-  padding: 2px 10px;
-  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  background: var(--color-surface);
+  padding: 2px var(--space-3);
+  border-radius: var(--radius-md);
   font-weight: 500;
 }
 
 .hours {
-  font-size: 11px;
-  color: var(--text-tertiary);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text-disabled);
   font-weight: 500;
 }
 
 .activity {
-  font-size: 14px;
-  color: var(--text-secondary);
-  margin: 2px 0 0;
-  line-height: 1.5;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  margin: var(--space-1) 0 0;
+  line-height: var(--leading-normal);
 }
 
 .module {
-  font-size: 11px;
-  color: var(--text-tertiary);
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  color: var(--color-text-disabled);
+  font-weight: 500;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .main {
+    padding: var(--space-6) var(--grid-gutter-sm);
+  }
+
+  .pageTitle {
+    font-size: var(--text-xl);
+  }
+
+  .timeline {
+    padding-left: var(--space-6);
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    padding: var(--space-4) var(--space-4);
+  }
+
+  .timeline {
+    padding-left: var(--space-5);
+  }
+
+  .item {
+    padding-left: var(--space-4);
+  }
+
+  .itemContent {
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .date {
+    font-size: var(--text-sm);
+    min-width: auto;
+  }
 }

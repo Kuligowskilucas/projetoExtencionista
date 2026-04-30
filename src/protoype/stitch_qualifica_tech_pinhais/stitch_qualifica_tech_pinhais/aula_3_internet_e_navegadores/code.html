@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aula 3 - Internet e Navegadores</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#1a1c1c",
+                        "surface-container-high": "#e8e8e8",
+                        "surface-tint": "#2a6b2c",
+                        "surface-variant": "#e2e2e2",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#90d689",
+                        "tertiary": "#533400",
+                        "primary-container": "#1b5e20",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#724900",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#002203",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#2a1800",
+                        "surface-bright": "#f9f9f9",
+                        "outline-variant": "#c0c9bb",
+                        "on-surface": "#1a1c1c",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#00450d",
+                        "secondary-fixed-dim": "#a9c7ff",
+                        "on-secondary-container": "#003670",
+                        "secondary-fixed": "#d6e3ff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#643f00",
+                        "primary-fixed-dim": "#91d78a",
+                        "on-surface-variant": "#41493e",
+                        "inverse-on-surface": "#f1f1f1",
+                        "secondary-container": "#64a1ff",
+                        "secondary": "#005db7",
+                        "on-secondary-fixed-variant": "#00468c",
+                        "surface-container-low": "#f3f3f3",
+                        "surface-dim": "#dadada",
+                        "on-tertiary-container": "#ffb751",
+                        "tertiary-fixed-dim": "#ffb957",
+                        "on-primary": "#ffffff",
+                        "outline": "#717a6d",
+                        "inverse-surface": "#2f3131",
+                        "on-secondary": "#ffffff",
+                        "surface": "#f9f9f9",
+                        "background": "#f9f9f9",
+                        "surface-container": "#eeeeee",
+                        "primary-fixed": "#acf4a4",
+                        "on-primary-fixed-variant": "#0c5216",
+                        "on-secondary-fixed": "#001b3d",
+                        "surface-container-highest": "#e2e2e2",
+                        "tertiary-fixed": "#ffddb5",
+                        "inverse-primary": "#91d78a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "touch-target-min": "48px",
+                        "margin": "32px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "container-max-width": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Space Grotesk"],
+                        "body-md": ["Public Sans"],
+                        "label-lg": ["Public Sans"],
+                        "headline-lg": ["Space Grotesk"],
+                        "label-sm": ["Public Sans"],
+                        "headline-xl": ["Space Grotesk"],
+                        "body-lg": ["Public Sans"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-xl": ["40px", { "lineHeight": "48px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shadow-[0_4px_20px_-4px_rgba(27,94,32,0.08)] docked full-width top-0 z-50">
+<div class="flex justify-between items-center w-full px-6 py-3 max-w-[1280px] mx-auto">
+<div class="text-xl font-bold text-green-900 dark:text-green-50 font-['Space_Grotesk'] tracking-tight">IFPR Pinhais</div>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="font-['Space_Grotesk'] text-sm font-medium tracking-tight text-slate-600 dark:text-slate-400 hover:text-green-700 dark:hover:text-green-300 transition-colors active:opacity-80 duration-200" href="#">Início</a>
+<a class="font-['Space_Grotesk'] text-sm font-medium tracking-tight text-green-700 dark:text-green-400 border-b-2 border-green-700 dark:border-green-400 pb-1 hover:text-green-700 dark:hover:text-green-300 transition-colors active:opacity-80 duration-200" href="#">Módulos</a>
+<a class="font-['Space_Grotesk'] text-sm font-medium tracking-tight text-slate-600 dark:text-slate-400 hover:text-green-700 dark:hover:text-green-300 transition-colors active:opacity-80 duration-200" href="#">Exercícios</a>
+<a class="font-['Space_Grotesk'] text-sm font-medium tracking-tight text-slate-600 dark:text-slate-400 hover:text-green-700 dark:hover:text-green-300 transition-colors active:opacity-80 duration-200" href="#">Cronograma</a>
+</nav>
+<div class="flex items-center gap-4 text-green-900 dark:text-green-500">
+<button aria-label="notifications" class="flex items-center justify-center w-touch-target-min h-touch-target-min hover:bg-surface-variant rounded-full transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button aria-label="settings" class="flex items-center justify-center w-touch-target-min h-touch-target-min hover:bg-surface-variant rounded-full transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<img alt="Foto de perfil do estudante" class="w-10 h-10 rounded-full border-2 border-outline-variant" data-alt="A small circular profile picture of a young male student wearing a casual grey shirt against a bright, well-lit indoor background. The lighting is soft and flattering, creating a professional yet approachable look. The overall mood is positive and engaging, fitting seamlessly into a clean, modern learning management system interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj_cmmezyq6jHYq5gGpGkOrBsy6LRFZOvWx_IgNCNEeJsstsS5z45djtehBi0eeUy9At0SxeVJ49kQbIcksXMh08mXif3TdfJ0aUQpIGBIMMS0_f_xvWNBqeU2g57EzlZeEo4hvB5pddXTd-vodXjQ-Xju3eFBNnCa3TeKBkVTBP-WBvT5UmF4hhUxNRH7WBqWZAgOQjxCPjODKxorIYpCH4UfvYTBtIlUH_DF7GNqk-T4KxtZtD10kyE8e9NUHnc0TWLMa__8XL0"/>
+</div>
+</div>
+</header>
+<div class="flex flex-1 max-w-[1280px] mx-auto w-full">
+<!-- Main Content (Left Column - 70%) -->
+<main class="w-full md:w-[70%] p-6 md:p-8 space-y-8">
+<header>
+<h1 class="font-headline-xl text-headline-xl text-primary mb-2">Aula 3 - Internet e Navegadores</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Conceitos fundamentais sobre a rede mundial de computadores e como utilizá-la com segurança e eficiência.</p>
+</header>
+<!-- Objective Card -->
+<section class="bg-surface border-l-4 border-secondary-container rounded-r-lg p-6 shadow-sm flex gap-4 items-start">
+<span class="material-symbols-outlined text-secondary text-3xl mt-1">track_changes</span>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-background mb-2">Objetivo da Aula</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Ao final desta aula, você será capaz de entender como a internet funciona, identificar os principais navegadores web, e realizar pesquisas eficientes utilizando operadores de busca, garantindo uma navegação segura.</p>
+</div>
+</section>
+<!-- Content Section -->
+<article class="space-y-6">
+<section>
+<h3 class="font-headline-md text-headline-md text-on-background mb-4">O que é a Internet?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">A internet é uma rede global de computadores interligados que permite a comunicação e o compartilhamento de informações em escala mundial. Ela funciona através de um conjunto de protocolos padrão (TCP/IP) que garantem que dados enviados de um ponto cheguem corretamente ao destino, independente da tecnologia subjacente.</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Imagine a internet como um enorme sistema de rodovias invisíveis por onde viajam textos, imagens, vídeos e áudios, conectando dispositivos desde smartphones até grandes servidores de empresas.</p>
+</section>
+<div class="my-8 rounded-xl overflow-hidden shadow-md">
+<img alt="Conexão global" class="w-full h-[300px] object-cover" data-alt="A vivid depiction of global connectivity showing the Earth from space at night, overlaid with glowing digital nodes and light beams representing internet traffic. The continents are outlined in bright, luminescent blue against the deep black of space. The image conveys a highly technological, interconnected, and modern aesthetic suitable for an educational module on networking." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHyB_ot2oWgbF6b9Kmx4OjRiDUD8kteoiSBF7KPOfVhweKaQvVNDdIP7cMW4B5PQQrL-QoL8AI1pj5kJXRi0UTliHeHuqGX1ZzMEPkLP9RadE75yYH_5nZigp9dEg9cLh7yS_RXtwX4Mr8p2eZ0DIVWMCeEQYEx6w7DbC1M2rQNyIwyC9C0iVXWOius2to0yk9EAxqbwXzBbWFC_mkLZna0MyevdoGIlkpesFA6N9TKvgi_dfSrNO6aTQC6BjFrOJy-M_T5PdRYs0"/>
+</div>
+<section>
+<h3 class="font-headline-md text-headline-md text-on-background mb-4">Navegadores (Browsers)</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Para acessar as páginas da web (World Wide Web), utilizamos um software específico chamado navegador. Ele "traduz" o código das páginas da internet em elementos visuais que podemos ler e interagir.</p>
+<ul class="list-disc pl-6 space-y-2 font-body-md text-body-md text-on-surface-variant">
+<li><strong>Google Chrome:</strong> Atualmente o mais utilizado, conhecido por sua velocidade e integração com serviços Google.</li>
+<li><strong>Mozilla Firefox:</strong> Focado em privacidade e customização, é uma excelente opção de código aberto.</li>
+<li><strong>Microsoft Edge:</strong> O navegador padrão do Windows atual, construído sobre a mesma base do Chrome (Chromium).</li>
+<li><strong>Safari:</strong> O navegador exclusivo do ecossistema Apple (Mac, iPhone, iPad).</li>
+</ul>
+</section>
+<!-- Tip Callout -->
+<div class="bg-surface-container-low border border-outline-variant rounded-lg p-5 flex gap-4 items-start">
+<span class="material-symbols-outlined text-tertiary-container mt-1" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface mb-1">Dica de Produtividade</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Aprenda atalhos de teclado! Usar 'Ctrl + T' (ou 'Cmd + T' no Mac) para abrir uma nova aba e 'Ctrl + Shift + T' para reabrir uma aba fechada acidentalmente economiza muito tempo durante a pesquisa.</p>
+</div>
+</div>
+<!-- Warning Callout -->
+<div class="bg-error-container border border-error rounded-lg p-5 flex gap-4 items-start">
+<span class="material-symbols-outlined text-error mt-1" style="font-variation-settings: 'FILL' 1;">warning</span>
+<div>
+<h4 class="font-label-lg text-label-lg text-error mb-1">Atenção à Segurança</h4>
+<p class="font-body-md text-body-md text-on-error-container">Nunca insira dados pessoais ou senhas em sites que não possuem o cadeado fechado (HTTPS) na barra de endereços. O HTTPS indica que a comunicação entre o seu navegador e o site é criptografada.</p>
+</div>
+</div>
+</article>
+<hr class="border-outline-variant my-8"/>
+<!-- Practice Exercise Section -->
+<section class="bg-surface border border-outline-variant rounded-xl p-6 md:p-8">
+<h3 class="font-headline-md text-headline-md text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined">task_alt</span>
+                    Exercício Prático
+                </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Complete as tarefas abaixo em seu próprio navegador para fixar o conteúdo da aula.</p>
+<div class="space-y-4">
+<label class="flex items-start gap-3 cursor-pointer group min-h-[48px] p-2 hover:bg-surface-container-low rounded-lg transition-colors">
+<input class="mt-1 w-5 h-5 text-primary-container border-outline rounded focus:ring-primary-container" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Abra uma nova aba anônima (ou in-private) em seu navegador atual.</span>
+</label>
+<label class="flex items-start gap-3 cursor-pointer group min-h-[48px] p-2 hover:bg-surface-container-low rounded-lg transition-colors">
+<input class="mt-1 w-5 h-5 text-primary-container border-outline rounded focus:ring-primary-container" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Acesse as configurações do navegador e localize onde limpar o cache e o histórico. (Não é necessário limpar agora).</span>
+</label>
+<label class="flex items-start gap-3 cursor-pointer group min-h-[48px] p-2 hover:bg-surface-container-low rounded-lg transition-colors">
+<input class="mt-1 w-5 h-5 text-primary-container border-outline rounded focus:ring-primary-container" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Adicione a página atual do curso aos seus "Favoritos" ou "Bookmarks".</span>
+</label>
+</div>
+</section>
+</main>
+<!-- Right Sidebar (30%) -->
+<aside class="hidden md:block w-[30%] p-6 md:p-8 border-l border-outline-variant bg-surface-bright space-y-8 sticky top-0 h-screen overflow-y-auto">
+<!-- Topics -->
+<div>
+<h4 class="font-label-lg text-label-lg text-on-background uppercase tracking-wider mb-4 border-b border-outline-variant pb-2">Nesta Aula</h4>
+<ul class="space-y-3 font-body-md text-body-md">
+<li><a class="text-primary hover:underline flex items-center gap-2" href="#"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span>O que é a Internet?</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2" href="#"><span class="w-1.5 h-1.5 bg-outline-variant rounded-full"></span>Navegadores (Browsers)</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2" href="#"><span class="w-1.5 h-1.5 bg-outline-variant rounded-full"></span>Segurança Básica</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2" href="#"><span class="w-1.5 h-1.5 bg-outline-variant rounded-full"></span>Exercício Prático</a></li>
+</ul>
+</div>
+<!-- Resources -->
+<div>
+<h4 class="font-label-lg text-label-lg text-on-background uppercase tracking-wider mb-4 border-b border-outline-variant pb-2">Recursos</h4>
+<div class="space-y-3">
+<a class="flex items-center gap-3 p-3 bg-surface rounded-lg border border-outline-variant hover:border-secondary hover:shadow-sm transition-all min-h-[48px]" href="#">
+<span class="material-symbols-outlined text-secondary">picture_as_pdf</span>
+<span class="font-body-md text-body-md text-on-surface">Apostila - Aula 3 (PDF)</span>
+</a>
+<a class="flex items-center gap-3 p-3 bg-surface rounded-lg border border-outline-variant hover:border-secondary hover:shadow-sm transition-all min-h-[48px]" href="#">
+<span class="material-symbols-outlined text-secondary">link</span>
+<span class="font-body-md text-body-md text-on-surface">Guia do Google Chrome</span>
+</a>
+</div>
+</div>
+<!-- Actions -->
+<div class="pt-8 flex flex-col gap-4">
+<button class="w-full bg-tertiary-container hover:bg-tertiary text-on-tertiary font-label-lg text-label-lg py-3 px-6 rounded-lg shadow-sm hover:shadow-md transition-all flex items-center justify-center gap-2 min-h-[48px]">
+<span class="material-symbols-outlined">check_circle</span>
+                    Marcar como Concluída
+                </button>
+<div class="flex justify-between gap-4 mt-4 border-t border-outline-variant pt-6">
+<button class="flex-1 border border-outline text-on-surface hover:bg-surface-container-low font-label-lg text-label-lg py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 min-h-[48px]">
+<span class="material-symbols-outlined">arrow_back</span>
+                        Anterior
+                    </button>
+<button class="flex-1 bg-surface-container-high hover:bg-surface-dim text-on-surface font-label-lg text-label-lg py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 min-h-[48px]">
+                        Próxima
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</aside>
+</div>
+<!-- Mobile Navigation Bottom Bar (visible only on small screens) -->
+<div class="md:hidden fixed bottom-0 w-full bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 shadow-[0_-4px_20px_-4px_rgba(27,94,32,0.08)] flex justify-between px-4 py-2 z-50">
+<button class="flex-1 flex items-center justify-center min-h-[48px] border border-outline rounded-lg mr-2 text-on-surface">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<button class="flex-[2] flex items-center justify-center min-h-[48px] bg-tertiary-container text-on-tertiary rounded-lg font-label-lg">
+            Concluir
+        </button>
+<button class="flex-1 flex items-center justify-center min-h-[48px] bg-surface-container-high text-on-surface rounded-lg ml-2">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<!-- Footer -->
+<footer class="bg-white dark:bg-slate-900 w-full border-t border-slate-200 dark:border-slate-800 mt-auto hidden md:block">
+<div class="flex flex-col md:flex-row justify-between items-center py-8 px-6 max-w-[1280px] mx-auto">
+<p class="font-['Space_Grotesk'] text-xs text-slate-500">© 2024 IFPR Pinhais - Instituto Federal do Paraná. Todos os direitos reservados.</p>
+<nav class="flex gap-4 mt-4 md:mt-0">
+<a class="font-['Space_Grotesk'] text-xs text-slate-500 hover:text-amber-600 transition-colors hover:opacity-100" href="#">Privacidade</a>
+<a class="font-['Space_Grotesk'] text-xs text-slate-500 hover:text-amber-600 transition-colors hover:opacity-100" href="#">Termos de Uso</a>
+<a class="font-['Space_Grotesk'] text-xs text-slate-500 hover:text-amber-600 transition-colors hover:opacity-100" href="#">Acessibilidade</a>
+<a class="font-['Space_Grotesk'] text-xs text-slate-500 hover:text-amber-600 transition-colors hover:opacity-100" href="#">Contato</a>
+</nav>
+</div>
+</footer>
+</body></html>

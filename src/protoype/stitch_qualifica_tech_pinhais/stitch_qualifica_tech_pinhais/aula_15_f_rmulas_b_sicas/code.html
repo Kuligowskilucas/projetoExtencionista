@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aula 15 — Fórmulas Básicas do Módulo 3</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Public+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary": "#533400",
+                        "on-primary-fixed-variant": "#0c5216",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#f9f9f9",
+                        "surface-variant": "#e2e2e2",
+                        "secondary-fixed": "#d6e3ff",
+                        "on-tertiary-fixed": "#2a1800",
+                        "on-surface": "#1a1c1c",
+                        "surface-dim": "#dadada",
+                        "tertiary-fixed": "#ffddb5",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#64a1ff",
+                        "error": "#ba1a1a",
+                        "outline": "#717a6d",
+                        "on-secondary-container": "#003670",
+                        "secondary": "#005db7",
+                        "on-tertiary-container": "#ffb751",
+                        "background": "#f9f9f9",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#e8e8e8",
+                        "tertiary-container": "#724900",
+                        "surface-container-low": "#f3f3f3",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#91d78a",
+                        "surface-tint": "#2a6b2c",
+                        "secondary-fixed-dim": "#a9c7ff",
+                        "on-tertiary-fixed-variant": "#643f00",
+                        "inverse-primary": "#91d78a",
+                        "on-primary-fixed": "#002203",
+                        "on-primary-container": "#90d689",
+                        "primary-container": "#1b5e20",
+                        "on-background": "#1a1c1c",
+                        "inverse-on-surface": "#f1f1f1",
+                        "tertiary-fixed-dim": "#ffb957",
+                        "primary-fixed": "#acf4a4",
+                        "on-secondary-fixed": "#001b3d",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#eeeeee",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface": "#f9f9f9",
+                        "on-surface-variant": "#41493e",
+                        "primary": "#00450d",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#00468c",
+                        "outline-variant": "#c0c9bb",
+                        "inverse-surface": "#2f3131"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "unit": "8px",
+                        "container-max-width": "1280px",
+                        "gutter": "24px",
+                        "touch-target-min": "48px",
+                        "margin": "32px"
+                    },
+                    fontFamily: {
+                        "headline-lg": ["Space Grotesk"],
+                        "label-sm": ["Public Sans"],
+                        "headline-md": ["Space Grotesk"],
+                        "body-md": ["Public Sans"],
+                        "body-lg": ["Public Sans"],
+                        "headline-xl": ["Space Grotesk"],
+                        "label-lg": ["Public Sans"]
+                    },
+                    fontSize: {
+                        "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "700" }],
+                        "label-sm": ["12px", { lineHeight: "16px", fontWeight: "500" }],
+                        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "headline-xl": ["40px", { lineHeight: "48px", fontWeight: "700" }],
+                        "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.02em", fontWeight: "600" }]
+                    }
+                }
+            }
+        };
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1;
+        }
+        /* Custom Module Color Logic (M3 - Purple) overrides per request despite config, adapting to the requested #6A1B9A but mapping conceptually to secondary/tertiary structures */
+        .bg-m3-accent { background-color: #6A1B9A; }
+        .text-m3-accent { color: #6A1B9A; }
+        .border-m3-accent { border-color: #6A1B9A; }
+        .bg-m3-accent-light { background-color: rgba(106, 27, 154, 0.1); }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md">
+<!-- TopAppBar -->
+<header class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shadow-sm fixed top-0 w-full flex justify-between items-center px-6 h-16 z-50">
+<div class="flex items-center gap-6">
+<div class="font-['Space_Grotesk'] text-xl font-black text-green-900 dark:text-green-50 tracking-tight">Portal IFPR</div>
+<nav class="hidden md:flex gap-6 h-full items-center">
+<a class="font-['Space_Grotesk'] font-medium tracking-tight text-green-900 dark:text-green-400 border-b-2 border-green-900 dark:border-green-400 pb-1 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors active:scale-95 duration-150 flex items-center h-full pt-1" href="#">Meus Cursos</a>
+<a class="font-['Space_Grotesk'] font-medium tracking-tight text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors active:scale-95 duration-150 flex items-center h-full" href="#">Biblioteca</a>
+<a class="font-['Space_Grotesk'] font-medium tracking-tight text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors active:scale-95 duration-150 flex items-center h-full" href="#">Calendário</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-[48px] h-[48px] flex items-center justify-center text-slate-500 hover:bg-slate-50 rounded-full transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="w-[48px] h-[48px] flex items-center justify-center text-slate-500 hover:bg-slate-50 rounded-full transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-surface-variant overflow-hidden flex-shrink-0">
+<img alt="Avatar do Estudante" class="w-full h-full object-cover" data-alt="A close up portrait of a young student looking slightly off camera, lit by soft natural light. The background is slightly blurred indicating an outdoor setting. The mood is calm and professional, aligning with the clean, modern aesthetic of an educational platform. The colors are muted and natural." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANTMI70kYRFI-xe4tC7ti_PJo-BgbE8K-sofR3RpYdXxS-Xsr4I5s-7o4GYgxcFvMCUf_Q3PRQoqSpcr3uOUAWrFVb3p81SsdQ7cVFHbeCZ0mXcGMnh6b9Jj6QSgdY167uwtj_sCeM5QkU2tk5BXdnRaw0dhOYQvIJrd3QqkMcuBfaIscd-YkAWy1g-Ttq5gu_7WLF5GR80hPOYZb5MJOpyeY_lOOw4PlrLwv-R-E36M3b-Pd3sXf5fSSjLmK8Ru9XZACqpnjKU1U"/>
+</div>
+</div>
+</header>
+<!-- SideNavBar & Main Content Wrapper -->
+<div class="pt-[64px] flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="hidden md:flex bg-slate-50 dark:bg-slate-950 border-r border-slate-200 dark:border-slate-800 fixed left-0 top-16 h-[calc(100vh-64px)] w-72 flex-col p-4 shadow-sm z-40">
+<div class="mb-6 px-4">
+<div class="flex items-center gap-3 mb-2">
+<div aria-label="Ícone do Módulo" class="w-10 h-10 rounded bg-m3-accent-light text-m3-accent flex items-center justify-center font-bold text-lg">
+                        M3
+                    </div>
+<div>
+<h2 class="font-bold text-slate-900 dark:text-white font-['Space_Grotesk'] text-lg leading-tight">Módulo 3</h2>
+<p class="text-sm text-slate-500 font-['Space_Grotesk']">Fórmulas de Planilha</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-1 overflow-y-auto font-['Space_Grotesk'] text-sm">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 hover:translate-x-1 transition-transform duration-200 ease-in-out min-h-[48px]" href="#">
+<span class="material-symbols-outlined">info</span>
+                    Introdução
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-purple-100 dark:bg-purple-900/30 text-purple-900 dark:text-purple-100 font-bold hover:translate-x-1 transition-transform duration-200 ease-in-out min-h-[48px]" href="#">
+<span class="material-symbols-outlined filled">calculate</span>
+                    Operadores Básicos
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 hover:translate-x-1 transition-transform duration-200 ease-in-out min-h-[48px]" href="#">
+<span class="material-symbols-outlined">account_tree</span>
+                    Funções Lógicas
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 hover:translate-x-1 transition-transform duration-200 ease-in-out min-h-[48px]" href="#">
+<span class="material-symbols-outlined">table_view</span>
+                    Procura e Referência
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 hover:translate-x-1 transition-transform duration-200 ease-in-out min-h-[48px]" href="#">
+<span class="material-symbols-outlined">assignment</span>
+                    Exercício Prático
+                </a>
+</nav>
+<div class="mt-auto pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-1 font-['Space_Grotesk'] text-sm">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 hover:translate-x-1 transition-transform duration-200 ease-in-out min-h-[48px]" href="#">
+<span class="material-symbols-outlined">download</span>
+                    Arquivos de Apoio
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800 hover:translate-x-1 transition-transform duration-200 ease-in-out min-h-[48px]" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+                    Glossário
+                </a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-72 p-margin max-w-[container-max-width] mx-auto w-full">
+<!-- Breadcrumb -->
+<nav class="mb-8 flex items-center text-label-sm text-on-surface-variant gap-2">
+<a class="hover:text-primary transition-colors" href="#">Módulo 3</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-primary font-semibold">Aula 15</span>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Main Column (70%) -->
+<div class="lg:col-span-8 flex flex-col gap-8">
+<!-- Header Section -->
+<header class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<h1 class="font-headline-xl text-on-surface">Aula 15 — Fórmulas Básicas</h1>
+<span class="inline-flex items-center gap-1 bg-surface-container-high px-3 py-1 rounded-full text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                                3h
+                            </span>
+</div>
+<!-- Callout -->
+<div class="bg-m3-accent-light border-l-4 border-m3-accent rounded-r-lg p-6 flex gap-4 items-start shadow-sm">
+<span class="material-symbols-outlined text-m3-accent text-3xl">lightbulb</span>
+<div>
+<h3 class="font-label-lg text-m3-accent uppercase tracking-wider mb-1">Módulo 3</h3>
+<p class="font-body-md text-on-surface"><strong>Objetivo:</strong> Aprender a realizar cálculos automáticos fundamentais (Soma, Média) para facilitar o controle de gastos e dados.</p>
+</div>
+</div>
+</header>
+<!-- Content Sections -->
+<section class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_4px_24px_rgba(27,94,32,0.05)] border border-surface-variant">
+<h2 class="font-headline-md text-on-surface mb-4 flex items-center gap-2">
+<span class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-primary font-bold text-sm">1</span>
+                            O que são Fórmulas?
+                        </h2>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                            Fórmulas são expressões matemáticas criadas para calcular e analisar dados de forma automática. Em planilhas, elas sempre começam com o sinal de igual (<code class="bg-surface-variant px-1 rounded text-primary font-mono">=</code>). Elas transformam dados brutos em informações úteis, economizando tempo e minimizando erros humanos em tarefas repetitivas.
+                        </p>
+</section>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Section 2: Soma -->
+<section class="bg-surface-container-lowest p-6 rounded-xl shadow-[0_4px_24px_rgba(27,94,32,0.05)] border border-surface-variant border-t-4 border-t-primary">
+<h2 class="font-headline-md text-on-surface mb-3 text-lg">A Fórmula da Soma (=SOMA)</h2>
+<p class="font-body-md text-on-surface-variant mb-4">Adiciona todos os números de um intervalo selecionado. Ideal para listas de compras ou totais mensais.</p>
+<div class="bg-surface p-4 rounded-lg border border-surface-variant">
+<div class="text-label-sm text-on-surface-variant mb-2 uppercase tracking-wide">Exemplo de Uso:</div>
+<code class="block bg-on-surface text-surface-bright p-3 rounded font-mono text-sm mb-3">
+                                    =SOMA(B2:B10)
+                                </code>
+<div class="flex items-center gap-2 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px] text-primary">check_circle</span>
+                                    Soma os valores da célula B2 até a B10.
+                                </div>
+</div>
+</section>
+<!-- Section 3: Média -->
+<section class="bg-surface-container-lowest p-6 rounded-xl shadow-[0_4px_24px_rgba(27,94,32,0.05)] border border-surface-variant border-t-4 border-t-secondary">
+<h2 class="font-headline-md text-on-surface mb-3 text-lg">A Fórmula da Média (=MÉDIA)</h2>
+<p class="font-body-md text-on-surface-variant mb-4">Calcula o valor médio de um grupo de números. Perfeito para médias de notas ou gastos diários.</p>
+<div class="bg-surface p-4 rounded-lg border border-surface-variant">
+<div class="text-label-sm text-on-surface-variant mb-2 uppercase tracking-wide">Exemplo de Uso:</div>
+<code class="block bg-on-surface text-surface-bright p-3 rounded font-mono text-sm mb-3">
+                                    =MÉDIA(C2:C5)
+                                </code>
+<div class="flex items-center gap-2 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px] text-secondary">check_circle</span>
+                                    Encontra a média entre C2 e C5.
+                                </div>
+</div>
+</section>
+</div>
+<!-- Interactive Calculator Mockup (Bento Grid Style) -->
+<section class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_4px_24px_rgba(27,94,32,0.05)] border border-surface-variant overflow-hidden relative">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10"></div>
+<h2 class="font-headline-md text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-m3-accent">grid_on</span>
+                            Simulação Visual
+                        </h2>
+<div class="bg-white border border-surface-variant rounded-lg overflow-hidden shadow-sm">
+<!-- Spreadsheet Header -->
+<div class="flex bg-surface-container-high border-b border-surface-variant text-center font-label-sm text-on-surface-variant select-none">
+<div class="w-12 py-2 border-r border-surface-variant bg-surface-variant/50"></div>
+<div class="flex-1 py-2 border-r border-surface-variant">A (Descrição)</div>
+<div class="flex-1 py-2">B (Valores)</div>
+</div>
+<!-- Rows -->
+<div class="flex border-b border-surface-variant group hover:bg-surface-container/30 transition-colors">
+<div class="w-12 py-3 border-r border-surface-variant text-center text-label-sm text-on-surface-variant bg-surface-container-high/50">1</div>
+<div class="flex-1 px-4 py-3 border-r border-surface-variant font-body-md text-on-surface">Alimentação</div>
+<div class="flex-1 px-4 py-3 font-mono text-on-surface text-right">R$ 10,00</div>
+</div>
+<div class="flex border-b border-surface-variant group hover:bg-surface-container/30 transition-colors">
+<div class="w-12 py-3 border-r border-surface-variant text-center text-label-sm text-on-surface-variant bg-surface-container-high/50">2</div>
+<div class="flex-1 px-4 py-3 border-r border-surface-variant font-body-md text-on-surface">Transporte</div>
+<div class="flex-1 px-4 py-3 font-mono text-on-surface text-right">R$ 20,00</div>
+</div>
+<div class="flex border-b border-surface-variant group hover:bg-surface-container/30 transition-colors">
+<div class="w-12 py-3 border-r border-surface-variant text-center text-label-sm text-on-surface-variant bg-surface-container-high/50">3</div>
+<div class="flex-1 px-4 py-3 border-r border-surface-variant font-body-md text-on-surface">Lazer</div>
+<div class="flex-1 px-4 py-3 font-mono text-on-surface text-right">R$ 30,00</div>
+</div>
+<!-- Results -->
+<div class="flex border-b-2 border-primary bg-primary/5">
+<div class="w-12 py-3 border-r border-surface-variant text-center text-label-sm text-on-surface-variant bg-surface-container-high/50">4</div>
+<div class="flex-1 px-4 py-3 border-r border-surface-variant font-body-md text-primary font-semibold flex items-center justify-between">
+                                    Total <span class="text-xs bg-primary text-white px-2 py-1 rounded font-mono">=SOMA(B1:B3)</span>
+</div>
+<div class="flex-1 px-4 py-3 font-mono font-bold text-primary text-right">R$ 60,00</div>
+</div>
+<div class="flex bg-secondary/5">
+<div class="w-12 py-3 border-r border-surface-variant text-center text-label-sm text-on-surface-variant bg-surface-container-high/50">5</div>
+<div class="flex-1 px-4 py-3 border-r border-surface-variant font-body-md text-secondary font-semibold flex items-center justify-between">
+                                    Média Diária <span class="text-xs bg-secondary text-white px-2 py-1 rounded font-mono">=MÉDIA(B1:B3)</span>
+</div>
+<div class="flex-1 px-4 py-3 font-mono font-bold text-secondary text-right">R$ 20,00</div>
+</div>
+</div>
+</section>
+<!-- Practical Exercise Checklist -->
+<section class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_4px_24px_rgba(27,94,32,0.05)] border border-surface-variant border-t-4 border-t-tertiary">
+<h2 class="font-headline-md text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary">task_alt</span>
+                            Exercício Prático
+                        </h2>
+<div class="flex flex-col gap-4">
+<label class="flex items-start gap-4 p-4 rounded-lg border border-surface-variant hover:border-primary cursor-pointer transition-colors hover:bg-surface-container/30 group">
+<div class="relative flex items-center pt-1">
+<input class="w-6 h-6 rounded border-outline text-primary focus:ring-primary focus:ring-offset-0 bg-surface" type="checkbox"/>
+</div>
+<div class="flex-1">
+<span class="font-body-md text-on-surface font-medium block">Crie uma nova planilha</span>
+<span class="text-sm text-on-surface-variant">Abra o seu editor de planilhas preferido e inicie um documento em branco.</span>
+</div>
+</label>
+<label class="flex items-start gap-4 p-4 rounded-lg border border-surface-variant hover:border-primary cursor-pointer transition-colors hover:bg-surface-container/30 group">
+<div class="relative flex items-center pt-1">
+<input class="w-6 h-6 rounded border-outline text-primary focus:ring-primary focus:ring-offset-0 bg-surface" type="checkbox"/>
+</div>
+<div class="flex-1">
+<span class="font-body-md text-on-surface font-medium block">Insira 5 valores de gastos</span>
+<span class="text-sm text-on-surface-variant">Na coluna A coloque a descrição, e na coluna B coloque os valores numéricos.</span>
+</div>
+</label>
+<label class="flex items-start gap-4 p-4 rounded-lg border border-surface-variant hover:border-primary cursor-pointer transition-colors hover:bg-surface-container/30 group">
+<div class="relative flex items-center pt-1">
+<input class="w-6 h-6 rounded border-outline text-primary focus:ring-primary focus:ring-offset-0 bg-surface" type="checkbox"/>
+</div>
+<div class="flex-1">
+<span class="font-body-md text-on-surface font-medium block">Aplique a fórmula =SOMA</span>
+<span class="text-sm text-on-surface-variant">Na linha abaixo dos valores, calcule o total gasto utilizando a função estudada.</span>
+</div>
+</label>
+</div>
+</section>
+</div>
+<!-- Sidebar Column (30%) -->
+<aside class="lg:col-span-4 flex flex-col gap-6">
+<!-- Progress Card -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0_4px_24px_rgba(27,94,32,0.05)] border border-surface-variant">
+<div class="flex justify-between items-center mb-2">
+<h3 class="font-label-lg text-on-surface">Seu Progresso no Módulo</h3>
+<span class="font-label-sm text-primary font-bold">45%</span>
+</div>
+<div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[45%]"></div>
+</div>
+</div>
+<!-- Nesta Aula Widget -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0_4px_24px_rgba(27,94,32,0.05)] border border-surface-variant">
+<h3 class="font-headline-sm font-semibold text-on-surface mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">format_list_bulleted</span>
+                            Nesta Aula
+                        </h3>
+<ul class="flex flex-col gap-3 relative before:absolute before:left-2.5 before:top-2 before:bottom-2 before:w-px before:bg-surface-variant">
+<li class="flex items-start gap-3 relative z-10 text-sm">
+<div class="w-5 h-5 rounded-full bg-primary text-white flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm">
+<span class="material-symbols-outlined text-[12px]">check</span>
+</div>
+<span class="text-on-surface font-medium">O que são Fórmulas?</span>
+</li>
+<li class="flex items-start gap-3 relative z-10 text-sm">
+<div class="w-5 h-5 rounded-full border-2 border-primary bg-white flex-shrink-0 mt-0.5"></div>
+<span class="text-on-surface-variant hover:text-primary cursor-pointer transition-colors">A Fórmula da Soma</span>
+</li>
+<li class="flex items-start gap-3 relative z-10 text-sm">
+<div class="w-5 h-5 rounded-full border-2 border-surface-variant bg-white flex-shrink-0 mt-0.5"></div>
+<span class="text-on-surface-variant hover:text-primary cursor-pointer transition-colors">A Fórmula da Média</span>
+</li>
+<li class="flex items-start gap-3 relative z-10 text-sm">
+<div class="w-5 h-5 rounded-full border-2 border-surface-variant bg-white flex-shrink-0 mt-0.5"></div>
+<span class="text-on-surface-variant hover:text-primary cursor-pointer transition-colors">Simulação Visual</span>
+</li>
+</ul>
+</div>
+<!-- Recursos Widget -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0_4px_24px_rgba(27,94,32,0.05)] border border-surface-variant">
+<h3 class="font-headline-sm font-semibold text-on-surface mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">folder_open</span>
+                            Recursos
+                        </h3>
+<a class="flex items-center gap-3 p-3 rounded-lg border border-surface-variant hover:border-primary hover:bg-primary/5 transition-all group min-h-[touch-target-min]" href="#">
+<div class="w-10 h-10 rounded bg-secondary/10 text-secondary flex items-center justify-center group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">table</span>
+</div>
+<div class="flex-1">
+<span class="block font-label-lg text-on-surface group-hover:text-primary transition-colors">Planilha Modelo</span>
+<span class="block text-xs text-on-surface-variant">XLSX • 12 KB</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">download</span>
+</a>
+</div>
+<!-- Actions Widget -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0_4px_24px_rgba(27,94,32,0.05)] border border-surface-variant flex flex-col gap-4">
+<button class="w-full min-h-[touch-target-min] bg-[#FFB300] hover:bg-[#FFA000] text-[#4E342E] font-label-lg rounded-lg shadow-sm hover:shadow-md transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">done_all</span>
+                            Marcar como Concluída
+                        </button>
+<div class="flex gap-2">
+<button class="flex-1 min-h-[touch-target-min] border border-secondary text-secondary hover:bg-secondary/5 font-label-lg rounded-lg transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+                                Anterior
+                            </button>
+<button class="flex-1 min-h-[touch-target-min] bg-primary hover:bg-primary-container text-white font-label-lg rounded-lg shadow-sm hover:shadow-md transition-all flex items-center justify-center gap-1">
+                                Próxima
+                                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</aside>
+</div>
+<!-- Bottom spacing -->
+<div class="h-16"></div>
+</main>
+</div>
+</body></html>

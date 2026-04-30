@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Banco de Exercícios - Portal do Aluno IFPR</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&amp;family=Public+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#ffb751",
+                        "on-tertiary-fixed": "#2a1800",
+                        "primary": "#00450d",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#643f00",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#90d689",
+                        "secondary-fixed": "#d6e3ff",
+                        "tertiary": "#533400",
+                        "surface-tint": "#2a6b2c",
+                        "tertiary-fixed-dim": "#ffb957",
+                        "surface-container-high": "#e8e8e8",
+                        "secondary-container": "#64a1ff",
+                        "on-secondary-container": "#003670",
+                        "surface-container": "#eeeeee",
+                        "surface-bright": "#f9f9f9",
+                        "surface-variant": "#e2e2e2",
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#41493e",
+                        "on-background": "#1a1c1c",
+                        "on-secondary-fixed-variant": "#00468c",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-primary-fixed": "#002203",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#2f3131",
+                        "on-primary-fixed-variant": "#0c5216",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#ffddb5",
+                        "primary-fixed-dim": "#91d78a",
+                        "secondary": "#005db7",
+                        "inverse-on-surface": "#f1f1f1",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#acf4a4",
+                        "on-secondary-fixed": "#001b3d",
+                        "tertiary-container": "#724900",
+                        "on-surface": "#1a1c1c",
+                        "surface": "#f9f9f9",
+                        "secondary-fixed-dim": "#a9c7ff",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#91d78a",
+                        "primary-container": "#1b5e20",
+                        "outline-variant": "#c0c9bb",
+                        "background": "#f9f9f9",
+                        "surface-container-low": "#f3f3f3",
+                        "outline": "#717a6d",
+                        "surface-dim": "#dadada",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "touch-target-min": "48px",
+                        "gutter": "24px",
+                        "margin": "32px",
+                        "unit": "8px",
+                        "container-max-width": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Space Grotesk"],
+                        "body-lg": ["Public Sans"],
+                        "label-sm": ["Public Sans"],
+                        "body-md": ["Public Sans"],
+                        "headline-lg": ["Space Grotesk"],
+                        "label-lg": ["Public Sans"],
+                        "headline-xl": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "headline-xl": ["40px", { "lineHeight": "48px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md">
+<!-- TopAppBar (Mobile) -->
+<header class="bg-white dark:bg-gray-950 docked full-width top-0 border-b border-slate-200 dark:border-slate-800 shadow-sm shadow-green-900/5 lg:hidden z-50">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-[1280px] mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-green-900 dark:text-green-400">menu</span>
+<span class="font-space-grotesk antialiased text-xl font-bold tracking-tight text-green-900 dark:text-green-400">Portal do Aluno IFPR</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-green-900 dark:text-green-400">notifications</span>
+<span class="material-symbols-outlined text-green-900 dark:text-green-400">help_outline</span>
+<img alt="Avatar do usuário" class="w-8 h-8 rounded-full object-cover border border-outline-variant" data-alt="A small, professional circular avatar portrait of a student. The lighting is soft and natural, matching the corporate modern, clean aesthetic of the educational platform. The background is subtle, emphasizing the subject." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcB9V9dzPZqjNQTxkUBnSOGNvMPWRwnPx23HBCqgRZcLD6uIR42GlSEQfqfoXuiDFqmTh7qJpw28H8BNywvmT9Ln5ZjkELu1KWEG_Wq2Yh8y28IicL5mLkc1IevRxMQT5OvtAfehpEQcQ3XKeYevUJdaaPI6xqWmffa2shxWiSEjglHgtNtyWMt2MuTb1kyJOfj1k-b3UiU-WC_wgvC5_FqDPBbEHpBARX7ZgCakuqUAIitpXIRWExXijkVD_YgaZSSqAHVJ_NMXQ"/>
+</div>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<!-- SideNavBar (Desktop) -->
+<nav class="bg-white dark:bg-gray-950 h-screen border-r border-slate-200 dark:border-slate-800 w-64 hidden lg:flex shadow-sm shadow-green-900/5 flex-col flex-shrink-0 sticky top-0 z-40">
+<div class="p-6 border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3">
+<img alt="Logotipo IFPR" class="w-10 h-10 rounded-lg object-cover" data-alt="A modern, abstract logo mark for a federal educational institution. The design features geometric shapes in deep primary greens and subtle amber accents, set against a bright, clean light-mode background. It conveys authority and growth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNWzVayMqibVFAG9fYFZCTZMDO364vywpmxRMsjLO1tZsBwA9O9IsxYtm5kJcKKmTYuK_Ot8gg5KhHBQaFK57DBJ4KNFrRcaqfkv0Lg2Y13FxbDGs3W_tL7yzbtFCQ6-uKDI1AWO4s9iqQZIh5KQDcd35KdR5o8QkI1bivHTMcxGXD4uwbjdF1cdeNjU2PTP3y0NYzTXP7k4z5ChcgNQWGxH116BV4Nmuqobs9rYlP-4J7o7vSRLb-IU49Jr79xdGmSIpDHAnQI4E"/>
+<div>
+<h1 class="text-lg font-black text-green-900 dark:text-green-400 font-space-grotesk">Educação Federal</h1>
+<p class="text-label-sm text-on-surface-variant font-medium font-public-sans">Excelência no Ensino</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2 p-4 h-full overflow-y-auto font-space-grotesk text-sm font-medium">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-900 transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-green-800">dashboard</span>
+<span>Home</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-900 transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-green-800">school</span>
+<span>Meus Cursos</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-green-50 dark:bg-green-900/20 text-green-900 dark:text-green-400 rounded-lg transition-transform hover:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]">quiz</span>
+<span>Banco de Exercícios</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-900 transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-green-800">assessment</span>
+<span>Minhas Notas</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-900 transition-all duration-200 group mt-auto" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-green-800">settings</span>
+<span>Configurações</span>
+</a>
+</div>
+<div class="p-4 border-t border-slate-200 dark:border-slate-800">
+<button class="w-full min-h-[48px] border border-secondary text-secondary font-label-lg rounded-lg hover:bg-secondary/5 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">support_agent</span>
+                    Suporte Acadêmico
+                </button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto bg-surface-container-lowest">
+<!-- TopAppBar Navigation Links (Desktop - Integrated into Main Canvas Header for better flow) -->
+<div class="hidden lg:flex border-b border-slate-200 bg-white sticky top-0 z-30 px-margin pt-4">
+<div class="flex gap-8 max-w-container-max-width mx-auto w-full font-headline-md text-[16px]">
+<a class="text-slate-600 dark:text-slate-400 hover:text-green-800 dark:hover:text-green-300 transition-colors pb-4 border-b-2 border-transparent" href="#">Dashboard</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-green-800 dark:hover:text-green-300 transition-colors pb-4 border-b-2 border-transparent" href="#">Cursos</a>
+<a class="text-green-900 dark:text-green-400 border-b-2 border-green-800 dark:border-green-400 font-bold pb-4" href="#">Exercícios</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-green-800 dark:hover:text-green-300 transition-colors pb-4 border-b-2 border-transparent" href="#">Progresso</a>
+</div>
+</div>
+<div class="max-w-container-max-width mx-auto w-full p-6 md:p-margin">
+<!-- Section Header -->
+<div class="mb-margin">
+<h1 class="font-headline-xl text-headline-xl text-on-background mb-unit">Banco de Exercícios</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">Acesse todas as atividades práticas do curso em um só lugar.</p>
+</div>
+<!-- Filters -->
+<div class="bg-surface rounded-xl p-6 border border-outline-variant/30 mb-margin shadow-sm shadow-primary-container/5">
+<div class="flex flex-col md:flex-row gap-4 items-end">
+<div class="w-full md:flex-1">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-2" for="search">Buscar Atividade</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full h-touch-target-min pl-10 pr-4 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface focus:border-primary-container focus:ring-1 focus:ring-primary-container font-body-md transition-colors" id="search" placeholder="Digite o nome da atividade..." type="text"/>
+</div>
+</div>
+<div class="w-full md:w-48">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-2" for="module">Módulo</label>
+<select class="w-full h-touch-target-min rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface focus:border-primary-container focus:ring-1 focus:ring-primary-container font-body-md" id="module">
+<option>Todos</option>
+<option>Módulo 1</option>
+<option>Módulo 2</option>
+<option>Módulo 3</option>
+</select>
+</div>
+<div class="w-full md:w-48">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-2" for="level">Nível</label>
+<select class="w-full h-touch-target-min rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface focus:border-primary-container focus:ring-1 focus:ring-primary-container font-body-md" id="level">
+<option>Todos</option>
+<option>Fácil</option>
+<option>Médio</option>
+<option>Difícil</option>
+</select>
+</div>
+<div class="w-full md:w-auto h-touch-target-min flex items-center">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-outline-variant text-primary-container focus:ring-primary-container cursor-pointer" type="checkbox"/>
+<span class="font-label-lg text-label-lg text-on-surface group-hover:text-primary-container transition-colors">Ocultar concluídos</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Exercises Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<article class="bg-surface-container-lowest rounded-xl border-t-4 border-secondary-container border-x border-b border-outline-variant/30 p-6 shadow-sm shadow-primary-container/5 hover:shadow-md hover:shadow-primary-container/10 transition-all duration-300 flex flex-col h-full group relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 bg-secondary-container/5 rounded-bl-full -z-10 transition-transform group-hover:scale-110"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-container/10 text-primary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                                Concluído
+                            </span>
+<span class="inline-flex items-center px-2 py-1 rounded-md bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+                                15 min
+                            </span>
+</div>
+<div class="mb-4">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-1 block">Aula 1</span>
+<h2 class="font-headline-md text-headline-md text-on-surface leading-tight group-hover:text-primary-container transition-colors">Explore o Computador</h2>
+</div>
+<div class="flex items-center gap-2 mb-margin mt-auto">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Fácil</span>
+</div>
+<button class="w-full min-h-[48px] bg-primary-container text-on-primary font-label-lg rounded-lg hover:bg-primary transition-colors flex items-center justify-center gap-2">
+                            Ver Atividade
+                            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</article>
+<!-- Card 2 -->
+<article class="bg-surface-container-lowest rounded-xl border-t-4 border-secondary-container border-x border-b border-outline-variant/30 p-6 shadow-sm shadow-primary-container/5 hover:shadow-md hover:shadow-primary-container/10 transition-all duration-300 flex flex-col h-full group relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 bg-surface-container/30 rounded-bl-full -z-10 transition-transform group-hover:scale-110"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm border border-outline-variant/50">
+<span class="material-symbols-outlined text-[14px]">radio_button_unchecked</span>
+                                Não iniciado
+                            </span>
+<span class="inline-flex items-center px-2 py-1 rounded-md bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+                                20 min
+                            </span>
+</div>
+<div class="mb-4">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-1 block">Aula 2</span>
+<h2 class="font-headline-md text-headline-md text-on-surface leading-tight group-hover:text-primary-container transition-colors">Digitação Cronometrada</h2>
+</div>
+<div class="flex items-center gap-2 mb-margin mt-auto">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Fácil</span>
+</div>
+<button class="w-full min-h-[48px] bg-tertiary-fixed-dim text-on-tertiary-fixed font-label-lg rounded-lg hover:bg-tertiary-fixed transition-colors flex items-center justify-center gap-2">
+                            Iniciar Atividade
+                            <span class="material-symbols-outlined text-[18px]">play_arrow</span>
+</button>
+</article>
+<!-- Card 3 -->
+<article class="bg-surface-container-lowest rounded-xl border-t-4 border-on-tertiary-container border-x border-b border-outline-variant/30 p-6 shadow-sm shadow-primary-container/5 hover:shadow-md hover:shadow-primary-container/10 transition-all duration-300 flex flex-col h-full group relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 bg-on-tertiary-container/5 rounded-bl-full -z-10 transition-transform group-hover:scale-110"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container/20 text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">clock_loader_40</span>
+                                Em progresso
+                            </span>
+<span class="inline-flex items-center px-2 py-1 rounded-md bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+                                30 min
+                            </span>
+</div>
+<div class="mb-4">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-1 block">Aula 3</span>
+<h2 class="font-headline-md text-headline-md text-on-surface leading-tight group-hover:text-primary-container transition-colors">Pesquisa Avançada no Google</h2>
+</div>
+<div class="flex items-center gap-2 mb-margin mt-auto">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Médio</span>
+</div>
+<button class="w-full min-h-[48px] border border-primary-container text-primary-container font-label-lg rounded-lg hover:bg-primary-container/5 transition-colors flex items-center justify-center gap-2">
+                            Continuar Atividade
+                            <span class="material-symbols-outlined text-[18px]">resume</span>
+</button>
+</article>
+<!-- Card 4 -->
+<article class="bg-surface-container-lowest rounded-xl border-t-4 border-on-tertiary-container border-x border-b border-outline-variant/30 p-6 shadow-sm shadow-primary-container/5 hover:shadow-md hover:shadow-primary-container/10 transition-all duration-300 flex flex-col h-full group relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 bg-surface-container/30 rounded-bl-full -z-10 transition-transform group-hover:scale-110"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm border border-outline-variant/50">
+<span class="material-symbols-outlined text-[14px]">radio_button_unchecked</span>
+                                Não iniciado
+                            </span>
+<span class="inline-flex items-center px-2 py-1 rounded-md bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+                                25 min
+                            </span>
+</div>
+<div class="mb-4">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-1 block">Aula 5</span>
+<h2 class="font-headline-md text-headline-md text-on-surface leading-tight group-hover:text-primary-container transition-colors">Analise o E-mail Suspeito</h2>
+</div>
+<div class="flex items-center gap-2 mb-margin mt-auto">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Médio</span>
+</div>
+<button class="w-full min-h-[48px] bg-tertiary-fixed-dim text-on-tertiary-fixed font-label-lg rounded-lg hover:bg-tertiary-fixed transition-colors flex items-center justify-center gap-2">
+                            Iniciar Atividade
+                            <span class="material-symbols-outlined text-[18px]">play_arrow</span>
+</button>
+</article>
+<!-- Card 5 -->
+<article class="bg-surface-container-lowest rounded-xl border-t-4 border-on-tertiary-container border-x border-b border-outline-variant/30 p-6 shadow-sm shadow-primary-container/5 hover:shadow-md hover:shadow-primary-container/10 transition-all duration-300 flex flex-col h-full group relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 bg-surface-container/30 rounded-bl-full -z-10 transition-transform group-hover:scale-110"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm border border-outline-variant/50">
+<span class="material-symbols-outlined text-[14px]">radio_button_unchecked</span>
+                                Não iniciado
+                            </span>
+<span class="inline-flex items-center px-2 py-1 rounded-md bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+                                40 min
+                            </span>
+</div>
+<div class="mb-4">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-1 block">Aula 7</span>
+<h2 class="font-headline-md text-headline-md text-on-surface leading-tight group-hover:text-primary-container transition-colors">Ata de Reunião no Docs</h2>
+</div>
+<div class="flex items-center gap-2 mb-margin mt-auto">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Médio</span>
+</div>
+<button class="w-full min-h-[48px] bg-tertiary-fixed-dim text-on-tertiary-fixed font-label-lg rounded-lg hover:bg-tertiary-fixed transition-colors flex items-center justify-center gap-2">
+                            Iniciar Atividade
+                            <span class="material-symbols-outlined text-[18px]">play_arrow</span>
+</button>
+</article>
+<!-- Card 6 -->
+<article class="bg-surface-container-lowest rounded-xl border-t-4 border-error border-x border-b border-outline-variant/30 p-6 shadow-sm shadow-primary-container/5 hover:shadow-md hover:shadow-primary-container/10 transition-all duration-300 flex flex-col h-full group relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 bg-surface-container/30 rounded-bl-full -z-10 transition-transform group-hover:scale-110"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm border border-outline-variant/50">
+<span class="material-symbols-outlined text-[14px]">radio_button_unchecked</span>
+                                Não iniciado
+                            </span>
+<span class="inline-flex items-center px-2 py-1 rounded-md bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+                                60 min
+                            </span>
+</div>
+<div class="mb-4">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-1 block">Aula 15</span>
+<h2 class="font-headline-md text-headline-md text-on-surface leading-tight group-hover:text-primary-container transition-colors">Lista de Gastos no Sheets</h2>
+</div>
+<div class="flex items-center gap-2 mb-margin mt-auto">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Difícil</span>
+</div>
+<button class="w-full min-h-[48px] bg-tertiary-fixed-dim text-on-tertiary-fixed font-label-lg rounded-lg hover:bg-tertiary-fixed transition-colors flex items-center justify-center gap-2">
+                            Iniciar Atividade
+                            <span class="material-symbols-outlined text-[18px]">play_arrow</span>
+</button>
+</article>
+</div>
+</div>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-gray-950 w-full border-t border-slate-200 dark:border-slate-800 mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-8 py-10 max-w-[1280px] mx-auto gap-4 font-space-grotesk text-xs text-slate-500">
+<p>© 2024 Instituto Federal de Educação - Todos os direitos reservados.</p>
+<div class="flex flex-wrap gap-4 justify-center">
+<a class="text-slate-500 dark:text-slate-500 hover:text-green-800 dark:hover:text-green-300 underline transition-all" href="#">Privacidade</a>
+<a class="text-slate-500 dark:text-slate-500 hover:text-green-800 dark:hover:text-green-300 underline transition-all" href="#">Termos de Uso</a>
+<a class="text-slate-500 dark:text-slate-500 hover:text-green-800 dark:hover:text-green-300 underline transition-all" href="#">Acessibilidade</a>
+<a class="text-slate-500 dark:text-slate-500 hover:text-green-800 dark:hover:text-green-300 underline transition-all" href="#">Contato</a>
+</div>
+</div>
+</footer>
+</main>
+</div>
+</body></html>
